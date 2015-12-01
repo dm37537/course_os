@@ -26,6 +26,6 @@ uint32_t kthread_start(kthread_handle * kthread)
 #include "kthread.h"
 #include "process.h"
 
-void kthread_create(thread_t* ptr, void * func, void *arg) {
+int kthread_create(thread_t* ptr, void *(*func)(void*), void *arg) {
 
 }

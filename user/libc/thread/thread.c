@@ -16,10 +16,7 @@
  */
 int thread_create(thread_t *thread, void *(*func)(void*), void *arg)
 {
-	//printf("askjdhkjho\n");
-	//printf("create adddd %u\n", (uint32_t)thread);
-	__syscall3(SYSCALL_CREATETHREAD, thread, func, arg);
-   return -10;
+   return __syscall3(SYSCALL_CREATETHREAD, thread, func, arg);
 }
 
 /* 

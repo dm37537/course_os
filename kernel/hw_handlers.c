@@ -166,7 +166,7 @@ long __attribute__((interrupt("SWI"))) software_interrupt_handler(void)
 		os_printf("Createthread system call called\n");
 		//os_printf("addr: %u", (uint32_t) (r0));
 		//r0 = 255;
-		kthread_create((thread_t*) r0, (void*) r1, (void*) r2);
+		kthread_create((thread_t*) r0, (void* (*)(void *)) r1, (void*) r2);
 		return 0;
 	default:
 		os_printf("That wasn't a syscall you knob!\n");

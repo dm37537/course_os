@@ -54,6 +54,7 @@ typedef struct {
 	pcb* pcb_pointer;
 } thread_t;
 
-void kthread_create(thread_t* ptr, void* func, void *arg);
+//(void (*)(void *))
+int kthread_create(thread_t* ptr, void *(*func)(void*), void *arg);
 
 #endif /* KERNEL_INCLUDE_KTHREAD_H_ */
